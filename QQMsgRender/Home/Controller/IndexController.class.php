@@ -18,7 +18,13 @@ class IndexController extends Controller {
 		// 上传文件 
 		$info   =   $upload->upload();
 		
+		/* info具体信息
+		 * array(1) { ["uploadfile"]=> array(9) { ["name"]=> string(22) "鏂板缓鏂囨湰鏂囨。.txt" ["type"]=> string(10) "text/plain" ["size"]=> int(12) ["key"]=> string(10) "uploadfile" ["ext"]=> string(3) "txt" ["md5"]=> string(32) "89403e405bbb916ea8627a445847f50a" ["sha1"]=> string(40) "47c402148721956af6a75f66d57160a237cdf303" ["savename"]=> string(17) "54058a891ac2e.txt" ["savepath"]=> string(11) "2014-09-02/" } }
+		 * 
+		 */
+		
 		var_dump($info); die('');
+		
 		if(!$info) {// 上传错误提示错误信息
 			$this->error($upload->getError());
 		}else{// 上传成功
